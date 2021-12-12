@@ -17,16 +17,16 @@ import javax.persistence.Table;
 @Entity
 @Table(name="tbl_employee")
 
-public class employee {
+public class Employee {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int employeeId;
+    private Long employeeId;
     private String name;
     private String department;
     private String location;
     
-    public employee(int employeeId, String name, String department, String location){
+    public Employee(Long employeeId, String name, String department, String location){
     this.employeeId = employeeId;
     this.name = name;
     this.department = department;
@@ -34,16 +34,16 @@ public class employee {
     }
     
     
-    public employee(){
+    public Employee(){
     
     }
     
     
-    public int getEmployeeId(){
+    public Long getEmployeeId(){
     return employeeId;
     }
     
-    public void setEmployeeId(int employeeId){
+    public void setEmployeeId(Long employeeId){
     this.employeeId = employeeId;
     }
     
