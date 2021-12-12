@@ -25,24 +25,24 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
     
-    @RequestMapping("/employees")
+    @RequestMapping("/myfirstreact/employees")
     public List<Employee> getAllEmployees(){
    return employeeRepository.findAll();
     }
 
-    @PostMapping("/employees")
+    @PostMapping("/myfirstreact/employees")
     public Employee postEmployee(@RequestBody Employee employee){
         return employeeRepository.save(employee);
     }
-    @GetMapping ("/employees/{id}")
+    @GetMapping ("/myfirstreact/employees/{id}")
     public Employee getEmployeeFromId(@PathVariable long id){
         return employeeRepository.findById((long) id).get();
     }
-    @PutMapping("/employees")
+    @PutMapping("/myfirstreact/employees")
     public Employee putEmployee(@RequestBody Employee employee){
         return employeeRepository.save(employee);
     }
-    @DeleteMapping("/employees/{id}")
+    @DeleteMapping("/myfirstreact/employees/{id}")
     public ResponseEntity<HttpStatus> deleteEmployee(@PathVariable long id){
          employeeRepository.deleteById(id);
             return new ResponseEntity<HttpStatus>(HttpStatus.NO_CONTENT);
